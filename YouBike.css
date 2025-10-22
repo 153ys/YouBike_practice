@@ -1,7 +1,7 @@
 body {
     font-family: 微軟正黑體;
     position: relative;
-    margin: 0 50px;
+    margin: 0 70px;
 }
 
 .info_source {
@@ -9,26 +9,44 @@ body {
   font-size: 14px;
 }
 
-.search_bar {
+.col{
+  display: flex;
+  align-items: center;
+}
+.searchBar {
+  flex: 1;
   padding: 0 10px;
-  margin-right: 10px;
-  width: 70%;
+  margin-right: 20px;
   height: 50px;
-  font-size: 20px;
+  font-size: 25px;
   border: 1px solid lightgray;
   border-radius: 5px;
 }
 
-.search_btn {
+.searchBtn {
   border: none;
-  padding: 5px 10px;
+  padding: 5px 12px;
   height: 50px;
   border-radius: 5px;
   background-color: green;
   color: white;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .underline {
   border: 1px solid lightgray;
+}
+
+.siteList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.bikeListCard {
+  padding: 10px;
+  border: 1px solid lightgray;
+}
+
+.addStyle {
+  color: gray;
 }

@@ -17,16 +17,32 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((sites) => {
           const bikeList = document.querySelector(".siteList")
           bikeList.innerHTML = ""
-
+          
           sites
             .filter((site) => site.ar.includes(query))
             .forEach((site) => {
-              const item = `
-                ${site.sna.replace("YouBike2.0_", "")} (${site.sbi}) ${site.ar}
-`;
+              const name = (site.sna || "").replace("YouBike2.0_", "");
+              const sbi = Number(site.sbi ?? 0);
+              const addr = site.ar ?? "";
+
+              const item =
+              `<div class= "bikeListCard">
+              <li class="list-group-item fs-5">
+              <i class="fa-solid fa-bicycle"></i>
+              ${site.sna.replace("YouBike2.0_", "")} (${site.Quantity}) <br>
+              <div class= "addStyle">
+              ${site.ar}
+              </div>
+              </li>
+              </div>`;
+
               bikeList.insertAdjacentHTML("beforeend", item)
             })
         })
+
+        .catch((err) => {
+          console.error("發生錯誤", err);
+      });
     }
   })
 })
